@@ -75,7 +75,7 @@ ENSight Web makes ENSight accessible and scalable by:
 ### Install
 
 ```bash
-git clone https://github.com/ensight-org/ensight-web.git
+git clone https://github.com/eth-ensight/ensight-web.git
 cd ensight-web
 npm install
 ```
