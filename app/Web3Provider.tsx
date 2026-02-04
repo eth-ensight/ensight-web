@@ -1,27 +1,18 @@
 "use client";
+// Import modules
+import { WagmiProvider } from 'wagmi'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { config } from "../config/config";
 
-import {createConfig, http, WagmiProvider} from 'wagmi'
-import {mainnet, sepolia} from 'wagmi/chains'
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import {metaMask} from "wagmi/connectors";
-import {injected} from "wagmi/connectors";
-
+// Set up React Query Client
 const queryClient = new QueryClient();
-export const config = createConfig({
-    chains: [mainnet, sepolia],
-    connectors: [
-        metaMask(),
-        injected(),
-    ],
-    transports: {
-        [mainnet.id]: http(),
-        [sepolia.id]: http(),
-    },
-})
 
 export function Web3Provider({children}: { children: React.ReactNode }) {
-    return <WagmiProvider config={config}>
+    return (
+    <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
             {children}
-        </QueryClientProvider></WagmiProvider>;
+        </QueryClientProvider>
+    </WagmiProvider>
+    )
 }
