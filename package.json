@@ -9,9 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@base-org/account": "^2.5.1",
+    "@metamask/sdk": "^0.33.1",
+    "@safe-global/safe-apps-provider": "^0.18.6",
+    "@tanstack/react-query": "^5.90.20",
+    "@wagmi/core": "^3.3.2",
+    "ethers": "^6.16.0",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "viem": "^2.45.1",
+    "wagmi": "^3.4.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
