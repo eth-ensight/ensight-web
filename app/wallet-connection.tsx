@@ -1,10 +1,11 @@
-import * as React from 'react'
+'use client'
+
 import { useConfig, useConnection, useEnsAvatar, useEnsName } from 'wagmi'
 import { disconnect } from 'wagmi/actions'
 
 export function Connection() {
   const config = useConfig()
-  const { address, status } = useConnection() // v3 replacement for useAccount :contentReference[oaicite:2]{index=2}
+  const { address, status } = useConnection()
 
   const { data: ensName } = useEnsName({ address })
   const { data: ensAvatar } = useEnsAvatar({
@@ -21,7 +22,7 @@ export function Connection() {
       )}
 
       <button
-        onClick={() => disconnect(config)} // actions come from wagmi/actions :contentReference[oaicite:3]{index=3}
+        onClick={() => disconnect(config)}
         disabled={!isConnected}
       >
         Disconnect

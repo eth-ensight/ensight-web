@@ -1,4 +1,5 @@
-import * as React from 'react'
+'use client'
+
 import { useConfig, useConnectors } from 'wagmi'
 import { connect } from 'wagmi/actions'
 
